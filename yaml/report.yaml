@@ -3,15 +3,20 @@ data:
     prefix: five_sec
     targets:
       - metric: cgroups.memory.total_cache
-        function: lineWidth(%, 5)
       - metric: cgroups.memory.total_file_anon
-        function: lineWidth(%, 1)
-    parameters: showLegend=0
+    parameters: 
+      - name: from
+        value: -6h
+      - name: until
+        value: -2h
   - class: graphite_chart
     prefix: five_sec
     targets:
       - metric: cgroups.memory.total_cache
-        function: lineWidth(%, 5)
       - metric: cgroups.memory.total_file_anon
-        function: lineWidth(%, 1)
-    parameters: showLegend=0
+    parameters:
+      - name: from
+        value: -6h
+      - name: until
+        value: -2h
+    compare: -1d
