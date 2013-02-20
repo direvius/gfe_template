@@ -1,0 +1,17 @@
+data:
+  - class: graphite_chart
+    prefix: five_sec
+    targets:
+      - metric: cgroups.memory.total_cache
+        function: lineWidth(%, 5)
+      - metric: cgroups.memory.total_file_anon
+        function: lineWidth(%, 1)
+    parameters: showLegend=0
+  - class: graphite_chart
+    prefix: five_sec
+    targets:
+      - metric: cgroups.memory.total_cache
+        function: lineWidth(%, 5)
+      - metric: cgroups.memory.total_file_anon
+        function: lineWidth(%, 1)
+    parameters: showLegend=0
