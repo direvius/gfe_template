@@ -1,10 +1,8 @@
-<html><body>
-<%
-import graphite
+<%!
+import components
 %>
+<html><body>
 % for component in data['data']:
-%  if component['class'] == 'graphite_chart':
-<img src='${graphite.chart_url(component)}' />
-%  endif
+  ${components.render_html(component)}
 % endfor
 </body></html>
