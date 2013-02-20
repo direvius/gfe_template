@@ -5,20 +5,16 @@ data:
     targets:
       - metric: cgroups.memory.total_cache
       - metric: cgroups.memory.total_file_anon
-    parameters: 
-      - name: from
-        value: -6h
-      - name: until
-        value: -2h
+    parameters:
+      showLegend: 1
   - class: graphite_chart
     name: CGroups Cache memory
     prefix: five_sec
     targets:
       - metric: cgroups.memory.total_cache
       - metric: cgroups.memory.total_file_anon
-    parameters:
-      - name: from
-        value: -6h
-      - name: until
-        value: -2h
     compare: -1d
+parameters:
+  from: -6h
+  until: -2h
+  compare: -1d
